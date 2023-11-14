@@ -1,0 +1,312 @@
+{
+  "test": "es_ES_OK",
+  "boilerplate": {
+    "invalidArgument": "Dio un argumento no válido: `{arg_name} = {inp}` *(se esperaba un valor de `{arg_type}`)*.",
+    "noPermission": "No tienes permiso suficiente para ejecutar este comando.",
+    "argumentType": {
+      "int": "entero",
+      "str": "literal de cadena",
+      "choice": "elección",
+      "bool": "verdadero Falso",
+      "timeStr": "cadena de tiempo"
+    },
+    "levels": {
+      "info": "información",
+      "success": "éxito",
+      "warning": "advertencia",
+      "error": "error",
+      "severe": "severo"
+    },
+    "anonymous": "anónimo",
+    "noReason": "Sin razón",
+    "success": [
+      "Operación exitosa",
+      "DE ACUERDO",
+      "Tarea completada exitosamente"
+    ],
+    "failure": [
+      "Fracaso encontrado",
+      "Fallido",
+      "Error al completar la tarea"
+    ],
+    "cancelled": [
+      "La operación de cancelación fue exitosa",
+      "Cancelado",
+      "Tarea cancelada exitosamente"
+    ],
+    "confirmCancel": [
+      [
+        "Confirmar",
+        "Cancelar"
+      ],
+      [
+        "Por la presente confirmo mi decisión",
+        "Invalidar la decisión"
+      ],
+      [
+        "DE ACUERDO",
+        "Cancelar"
+      ],
+      [
+        "Sí",
+        "Retirarse"
+      ],
+      [
+        "Sí",
+        "Ahora"
+      ],
+      [
+        "Sí",
+        "No"
+      ]
+    ],
+    "date": "%-d %B %Y"
+  },
+  "commands": {
+    "ban": {
+      "commandDescription": "Banea a un usuario.",
+      "argumentDescription": {
+        "user": "El usuario que deseas prohibir.",
+        "reason": "La razón por la que quieres prohibir a ese usuario.",
+        "quiet": "Envía el anuncio (el usuario afectado aún recibiría el DM).",
+        "anonymous": "Si desea que su nombre de usuario se muestre en el anuncio."
+      },
+      "confirmationPrompt": [
+        "Confirma tu decisión de prohibir a {usuario}.",
+        "¿Estás seguro de que quieres prohibir a {usuario}?",
+        "¿Realmente quieres que {user} desaparezca y nunca vuelva a este servidor? (estarán muy tristes)",
+        "¿Prohibir a {usuario}?",
+        "¿En realidad? ¿Prohibir a {usuario}?",
+        "Confirma que deseas prohibir a {usuario}."
+      ],
+      "actionPrompt": {
+        "public": [
+          "{user} han sido baneados por {admin}, porque `{reason}`.",
+          "{admin} baneado {user} por `{reason}`.",
+          "{user} han sido golpeados por el martillo de prohibición de {admin}, por &quot;{reason}&quot;."
+        ],
+        "private": [
+          "Has sido baneado por {admin} por `{reason}`. A partir de ahora ya no podrás participar en conversaciones en ese servidor. Puede solicitar un perdón o una reconsideración a los moderadores escribiendo este DM si considera que su decisión es errónea.",
+          "{admin} te ha impedido participar en su servidor al prohibirte por `{reason}`. Se puede solicitar un perdón o una reconsideración enviando un mensaje a este DM si considera que su decisión es errónea.",
+          "{admin} decidió banearte por `{reason}`. Ya no puedes participar en su servidor. El indulto o la reconsideración están disponibles enviando mensajes en este DM si considera que su decisión es errónea."
+        ]
+      }
+    },
+    "unban": {
+      "commandDescription": "Desbanea a un usuario.",
+      "argumentDescription": {
+        "user": "El usuario que deseas desbanear.",
+        "reason": "La razón por la que deseas desbanear a ese usuario.",
+        "quiet": "Envía el anuncio (el usuario afectado aún recibiría el DM).",
+        "anonymous": "Si desea que su nombre de usuario se muestre en el anuncio."
+      },
+      "confirmationPrompt": [
+        "Confirma tu decisión de desbanear a {usuario}.",
+        "¿Estás seguro de que quieres desbanear a {usuario}?",
+        "¿Realmente desea permitir que {user} pueda regresar al servidor? (podrían asaltar el servidor)",
+        "¿Desbanear a {usuario}?",
+        "¿En realidad? ¿Desbanear a {usuario}?",
+        "Por favor, confirma que deseas desbanear a {usuario}."
+      ],
+      "actionPrompt": {
+        "public": [
+          "{user} han sido desbaneados por {admin}, porque `{reason}`.",
+          "{admin} desbloqueado {user} por `{razón}`.",
+          "{user} han sido perdonados por {admin}, por `{reason}`."
+        ],
+        "private": [
+          "{admin} te ha desbaneado por `{reason}`. Puedes participar en el servidor ahora.",
+          "{admin} te ha permitido participar en su servidor al desbloquearte por `{reason}`. Ahora puedes enviar mensajes en el servidor.",
+          "{admin} decidió perdonarte por `{reason}`. Ya puedes participar en el servidor."
+        ]
+      }
+    },
+    "kick": {
+      "commandDescription": "Patea a un usuario.",
+      "argumentDescription": {
+        "user": "El usuario al que quieres expulsar.",
+        "reason": "La razón por la que quieres expulsar a ese usuario.",
+        "quiet": "Envía el anuncio (el usuario afectado aún recibiría el DM).",
+        "anonymous": "Si desea que su nombre de usuario se muestre en el anuncio."
+      },
+      "confirmationPrompt": [
+        "Confirme su decisión de expulsar a {usuario}.",
+        "¿Estás seguro de que quieres eliminar {user} del servidor?",
+        "¿Realmente quieres que {user} desaparezca de este servidor? (podrían regresar si quisieran)",
+        "¿Sacar {user} del servidor?",
+        "¿En realidad? ¿Echar a {usuario}?",
+        "Por favor, confirma que quieres expulsar a {usuario}."
+      ],
+      "actionPrompt": {
+        "public": [
+          "{user} ha sido expulsado por {admin}, porque `{reason}`.",
+          "{admin} pateó {user} por `{razón}`.",
+          "{user} ha sido golpeado por el pie de {admin}, saliendo volando del servidor, por `{reason}`."
+        ],
+        "private": [
+          "Te han expulsado {admin} por `{reason}`.",
+          "{admin} te ha impedido participar en su servidor pateándote por `{reason}`",
+          "{admin} decidió echarte por `{razón}`."
+        ]
+      }
+    },
+    "isolate": {
+      "commandDescription": "Aísla a un usuario.",
+      "argumentDescription": {
+        "user": "El usuario que desea aislar a ese usuario.",
+        "reason": "La razón por la que desea prohibir el aislamiento del usuario.",
+        "duration": "La duración que desea aislar a ese usuario.",
+        "quiet": "Envía el anuncio (el usuario afectado aún recibiría el DM).",
+        "anonymous": "Si desea que su nombre de usuario se muestre en el anuncio."
+      },
+      "confirmationPrompt": [
+        "Confirme su decisión de aislar a {usuario}.",
+        "¿Está seguro de que desea aislar a {usuario}?",
+        "¿De verdad quieres que te calles {user}? (no podrán decir ni interactuar con nada, ni siquiera reaccionar)",
+        "¿Aislar a {usuario}?",
+        "¿En realidad? ¿Aislar a {usuario}?",
+        "Confirme que desea aislar a {usuario}."
+      ],
+      "actionPrompt": {
+        "public": [
+          "{user} ha sido aislado por {admin}, porque `{reason}`. Regresarán después de {duración}.",
+          "{admin} aisló {user} para `{razón}`. Después de {duration}, podrán volver a hablar.",
+          "El equipo de aislamiento de {admin} ha alcanzado {user} por `{reason}`. Se lanzarán después de {duration}."
+        ],
+        "private": [
+          "Has sido aislado por {admin} por `{reason}`. No podrás participar en conversaciones en ese servidor hasta el {duración}. Puede solicitar un perdón o una reducción de la duración a los moderadores escribiendo este mensaje directo si considera que su decisión es errónea.",
+          "{admin} te ha impedido participar en su servidor aislándote por `{reason}`. No podrás participar en conversaciones en ese servidor hasta el {duración}. Se puede solicitar un perdón o una reducción de la duración enviando un mensaje a este DM si considera que su decisión es errónea.",
+          "{admin} decidió aislarte por `{motivo}`. No puedes participar en su servidor hasta el {duración}. El perdón o el acortamiento de la duración están disponibles enviando mensajes en este DM si considera que su decisión es errónea."
+        ]
+      }
+    },
+    "warn": {
+      "commandDescription": "Advierte a un usuario.",
+      "argumentDescription": {
+        "user": "El usuario al que quieres advertir.",
+        "prompt": "El contenido de la advertencia.",
+        "anonymous": "Si desea que su nombre de usuario se muestre en el anuncio."
+      },
+      "actionPrompt": {
+        "public": [
+          "{user} ha sido advertido por {admin}, porque `{reason}`.",
+          "{admin} advirtió {user} por `{razón}`.",
+          "{user} ha sido golpeado por el martillo de advertencia de {admin}, por &quot;{reason}&quot;."
+        ],
+        "private": [
+          "{admin} te ha advertido por `{reason}`. Lea atentamente el mensaje de advertencia antes de continuar chateando.",
+          "{admin} te ha advertido en su servidor advirtiéndote por `{reason}`. Lea atentamente el mensaje.",
+          "{admin} decidió advertirte por `{reason}`. Nos gustaría que lea atentamente el mensaje de advertencia."
+        ]
+      }
+    },
+    "chat": {
+      "commandDescription": "Responde a tus preguntas usando GPT-4.",
+      "argumentDescription": {
+        "prompt": "Su aviso para la IA."
+      },
+      "card": {
+        "title": "GPT-4: Generando respuesta...",
+        "titleComplete": "GPT-4 — Resultado de generación",
+        "prompt": "Inmediato",
+        "answer": "Salida generada"
+      },
+      "stopGeneration": "Detener generación",
+      "noEthics": "La ética de la IA se desconecta. En ningún caso se podrá responsabilizar al autor de este bot por nada de lo dicho por AI.",
+      "error": {
+        "noResponse": "Se ha producido un error: OpenAI no respondió a su solicitud. No puedo responder a tu pregunta en este momento. Aunque siempre puedes volver a intentarlo más tarde.",
+        "outputCut": "[generación de texto detenida]"
+      }
+    },
+    "shitpost": {
+      "commandDescription": "Utilidades de Shitposting para Shitposter profesional."
+    },
+    "shitpost_cringe": {
+      "commandDescription": "Utilice una ortografía vergonzosa para que el texto introducido suene estúpido.",
+      "argumentDescription": {
+        "prompt": "El texto a transformar."
+      }
+    },
+    "shitpost_emoji": {
+      "commandDescription": "Emojis de basura en todas partes del texto de entrada.",
+      "argumentDescription": {
+        "prompt": "El texto a transformar."
+      }
+    },
+    "wfsolver": {
+      "commandDescription": "Da posibles respuestas a ejercicios de formación de palabras.",
+      "argumentDescription": {
+        "query": "La palabra mirar hacia arriba",
+        "pos": "El resultado es parte del discurso.",
+        "max": "Resultados máximos para buscar"
+      },
+      "card": {
+        "resultTitle": "Resultado de la búsqueda de palabras",
+        "research": "Investigar"
+      }
+    },
+    "music_play": {
+      "commandDescription": "Busca una canción en YouTube y la reproduce.",
+      "argumentDescription": {
+        "query_or_url": "Su consulta de búsqueda o URL del vídeo."
+      }
+    },
+    "music_pause": {
+      "commandDescription": "Pausa la canción que se está reproduciendo actualmente."
+    },
+    "music_stop": {
+      "commandDescription": "Detiene la canción que se está reproduciendo actualmente y abandona el canal de voz."
+    },
+    "music_skip": {
+      "commandDescription": "Salta la canción que se está reproduciendo actualmente. Si la cola ha terminado, abandona el canal de voz."
+    },
+    "music_list": {
+      "commandDescription": "Enumera las canciones actualmente en la cola."
+    },
+    "music_status": {
+      "commandDescription": "Devuelve el progreso de la reproducción de la canción."
+    },
+    "music": {
+      "chooserPlaceholder": "Por favor elige una canción.",
+      "actions": {
+        "nowPlaying": "De acuerdo. Jugando ahora:",
+        "addedQueue": "De acuerdo. Agregado a la cola:"
+      },
+      "playButton": "Jugar",
+      "card": {
+        "likeDislike": "Le gusta disgustos",
+        "channel": "Canal",
+        "duration": "Duración",
+        "views": "Puntos de vista",
+        "uploadDate": "Fecha de carga",
+        "requestedTemplate": "Solicitado por {name}"
+      },
+      "error": {
+        "notInVoice": "No estás en un canal de voz. Únase a uno primero antes de usar este comando.",
+        "notPlaying": "Actualmente no estoy reproduciendo nada en tu canal."
+      },
+      "queueEndDisconnect": "La cola ha terminado. Desconectando.",
+      "disconnected": "La reproducción se detuvo.",
+      "paused": "Reproducción en pausa.",
+      "resumed": "Se reanudó la reproducción.",
+      "status": "Estado de reproducción"
+    },
+    "setup": {
+      "noDM": "¡No me envíes un DM!",
+      "noDMok": "Vale, no te enviaré más mensajes de texto. Utilice `/settings enableDM true` para activarlo nuevamente.",
+      "card": "## EL PROYECTO PHOENIX\nEsta es la configuración personalizada por primera vez. Elija su idioma para continuar: (*si ignora este mensaje, su idioma se establecerá en vietnamita*)",
+      "languageSuccess": "Su idioma ha sido cambiado a {lang}. Puede cambiarlo más tarde usando `/settings language`."
+    },
+    "whatsup": {
+      "commandDescription": "Muestra los eventos entrantes en el calendario.",
+      "showMorePlaceholder": "Elige evento para mostrar más",
+      "reportCard": "INFORMAR >> Próximas asignaciones\n{asn}\nElija uno de los eventos enumerados a continuación para obtener más información.",
+      "nothing": "No hay tareas próximas.",
+      "extra": {
+        "adder": "Nombre del autor",
+        "date": "Fecha agregada",
+        "description": "Descripción"
+      }
+    }
+  }
+}

@@ -1,0 +1,312 @@
+{
+  "test": "vi_OK",
+  "boilerplate": {
+    "invalidArgument": "Tham số bạn đưa ra không hợp lệ: `{arg_name} = {inp}`, *(yêu cầu một `{arg_type}`)*",
+    "noPermission": "Bạn không có quyền thực hiện câu lệnh này.",
+    "argumentType": {
+      "int": "số nguyên",
+      "str": "văn bản ngắn",
+      "choice": "lựa chọn",
+      "bool": "lựa chọn đúng/sai",
+      "timeStr": "văn bản biểu thị thời gian"
+    },
+    "levels": {
+      "info": "thông tin",
+      "success": "thành công",
+      "warning": "cảnh báo",
+      "error": "lỗi",
+      "severe": "hỏng"
+    },
+    "anonymous": "ẩn danh",
+    "noReason": "không gì cả",
+    "success": [
+      "Xong",
+      "OK",
+      "Hoàn thành nhiệm vụ"
+    ],
+    "failure": [
+      "Thất bại",
+      "Lỗi",
+      "Không thể hoàn thành được nhiệm vụ"
+    ],
+    "cancelled": [
+      "Đã hủy",
+      "Hủy thành công",
+      "Bạn đã hủy tác vụ"
+    ],
+    "confirmCancel": [
+      [
+        "Xác nhận",
+        "Hủy bỏ"
+      ],
+      [
+        "Tôi xác nhận",
+        "Thu hồi quyết định"
+      ],
+      [
+        "OK",
+        "Hủy"
+      ],
+      [
+        "Có",
+        "Không"
+      ],
+      [
+        "Ô kê",
+        "Không có đâu"
+      ],
+      [
+        "Được rồi",
+        "Quay xe"
+      ]
+    ],
+    "date": "ngày %-d tháng %-m năm %Y"
+  },
+  "commands": {
+    "ban": {
+      "commandDescription": "Cấm không cho người dùng tham gia vào server.",
+      "argumentDescription": {
+        "user": "Người dùng mà bạn muốn cấm",
+        "reason": "Lý do cấm người dùng đó.",
+        "quiet": "Có công khai thông báo cấm không (người dùng bị cấm vẫn sẽ nhận được DM).",
+        "anonymous": "Có hiện tên bạn trong thông báo cấm không."
+      },
+      "confirmationPrompt": [
+        "Hãy xác nhận ban {user}.",
+        "Bạn có chắc muốn ban {user} không?",
+        "Bạn có thực sự muốn {user} rời khỏi server này và không bao giờ quay lại nữa không? (sẽ buồn lắm đấy)",
+        "Thực sự cấm {user}?",
+        "Cấm {user}? Tin chuẩn không anh?",
+        "Để cấm {user}, bạn cần phải xác nhận quyết định này."
+      ],
+      "actionPrompt": {
+        "public": [
+          "{user} đã bị cấm bởi {admin}, vì `{reason}`.",
+          "{admin} đã cấm {user} vì `{reason}`.",
+          "{user} bị {admin} ban, vì `{reason}`."
+        ],
+        "private": [
+          "Bạn đã bị cấm khỏi server bởi {admin} vì `{reason}`. Bạn sẽ không thể tham gia server đó nữa. Nhắn vào DM này nếu như bạn muốn admin xem xét lại quyết định này.",
+          "{admin} đã cấm bạn, bởi vì `{reason}`. Bạn có thể yêu cầu xem xét lại bằng cách nhắn vào DM này.",
+          "{admin} đã quyết định cấm bạn, vì `{reason}`. Bạn sẽ không thể tham gia lại server đó nữa. Nhắn vào DM này để yêu cầu admin xem xét lại."
+        ]
+      }
+    },
+    "unban": {
+      "commandDescription": "Hủy lệnh cấm, cho phép người dùng tham gia vào server.",
+      "argumentDescription": {
+        "user": "Người dùng mà bạn muốn hủy cấm",
+        "reason": "Lý do hủy cấm cấm người dùng đó.",
+        "quiet": "Có công khai thông báo hủy cấm không (người dùng bị cấm vẫn sẽ nhận được DM).",
+        "anonymous": "Có hiện tên bạn trong thông báo hủy cấm không."
+      },
+      "confirmationPrompt": [
+        "Hãy xác nhận hủy cấm {user}.",
+        "Bạn có chắc muốn hủy cấm {user} không?",
+        "Bạn có thực sự muốn {user} quay lại server không? (hãy cẩn trọng)",
+        "Thực sự hủy cấm {user}?",
+        "Hủy cấm {user}? Tin chuẩn không anh?",
+        "Để hủy cấm {user}, bạn cần phải xác nhận quyết định này."
+      ],
+      "actionPrompt": {
+        "public": [
+          "{user} đã được tha bổng bởi {admin}, vì `{reason}`.",
+          "{admin} đã tha bổng {user} vì `{reason}`.",
+          "{user} được {admin} ban, vì `{reason}`."
+        ],
+        "private": [
+          "Bạn đã được tha bổng bởi {admin} vì `{reason}`. Bạn bây giờ có thể tham gia lại server.",
+          "{admin} đã tha bổng bạn, bởi vì `{reason}`. Bạn bây giờ có thể tham gia lại server.",
+          "{admin} đã quyết định tha bổng bạn, vì `{reason}`. Bạn bây giờ có thể tham gia lại server."
+        ]
+      }
+    },
+    "kick": {
+      "commandDescription": "Khai trừ một người dùng ra khỏi server",
+      "argumentDescription": {
+        "user": "Người dùng mà bạn muốn khai trừ",
+        "reason": "Lý do khai trừ người dùng đó.",
+        "quiet": "Có công khai thông báo khai trừ không (người dùng bị cấm vẫn sẽ nhận được DM).",
+        "anonymous": "Có hiện tên bạn trong thông báo khai trừ không."
+      },
+      "confirmationPrompt": [
+        "Hãy xác nhận việc khai trừ {user} ra khỏi server.",
+        "Bạn có chắc muốn đuổi {user} không?",
+        "Bạn có thực sự muốn {user} rời khỏi server này không? (người dùng đó vẫn có thể vào lại server)",
+        "Thực sự đuổi {user}?",
+        "Đuổi {user}? Tin chuẩn không anh?",
+        "Để đuổi được {user}, bạn cần phải xác nhận quyết định này."
+      ],
+      "actionPrompt": {
+        "public": [
+          "{user} đã bị khai trừ bởi {admin}, vì `{reason}`.",
+          "{admin} đã khai trừ {user} vì `{reason}`.",
+          "{user} bị {admin} khai trừ, vì `{reason}`."
+        ],
+        "private": [
+          "Bạn đã bị khai trừ khỏi server bởi {admin} vì `{reason}`.",
+          "{admin} đã khai trừ bạn, bởi vì `{reason}`.",
+          "{admin} đã quyết định khai trừ bạn, vì `{reason}`."
+        ]
+      }
+    },
+    "isolate": {
+      "commandDescription": "Cách ly, không cho người dùng tương tác trong một khoảng thời gian nhất định.",
+      "argumentDescription": {
+        "user": "Người dùng mà bạn muốn cách ly",
+        "reason": "Lý do cách ly người dùng đó.",
+        "duration": "Thời gian cách ly.",
+        "quiet": "Có công khai thông báo cách ly không (người dùng bị cách ly vẫn sẽ nhận được DM).",
+        "anonymous": "Có hiện tên bạn trong thông báo cách ly không."
+      },
+      "confirmationPrompt": [
+        "Hãy xác nhận cách ly {user}.",
+        "Bạn có chắc muốn cách ly {user} không?",
+        "Bạn có thực sự muốn cách ly {user} không? (sẽ không thể tương tác được trong server, bao gồm cả thả emoji)",
+        "Thực sự cách ly {user}?",
+        "Cách ly {user}? Tin chuẩn không anh?",
+        "Để cách ly {user}, bạn cần phải xác nhận quyết định này."
+      ],
+      "actionPrompt": {
+        "public": [
+          "{user} đã bị cách ly bởi {admin}, vì `{reason}`. Đồng chí này sẽ quay lại sau {duration}.",
+          "{admin} đã cách ly {user} vì `{reason}`. Đồng chí này có thể tiếp tục nhắn sau {duration}.",
+          "{user} bị {admin} cách ly, vì `{reason}`. Sau {duration}, đồng chí có thể tiếp tục nhắn."
+        ],
+        "private": [
+          "Bạn đã bị cách ly khỏi server bởi {admin} vì `{reason}`. Bạn có thể tiếp tục nhắn tin trong server đó  vào {duration}. Nhắn vào DM này nếu như bạn muốn admin xem xét lại quyết định này.",
+          "{admin} đã cách ly bạn, bởi vì `{reason}`. Bạn có thể tiếp tục nhắn tin trong server đó vào {duration}. Bạn có thể yêu cầu xem xét lại bằng cách nhắn vào DM này.",
+          "{admin} đã quyết định cách ly bạn, vì `{reason}`. Bạn có thể tiếp tục nhắn trong server vào {duration}. Nhắn vào DM này để yêu cầu admin xem xét lại."
+        ]
+      }
+    },
+    "warn": {
+      "commandDescription": "Cảnh cáo người dùng",
+      "argumentDescription": {
+        "user": "Người dùng mà bạn muốn cảnh cáo",
+        "prompt": "Lý do cảnh cáo người dùng đó.",
+        "anonymous": "Có hiện tên bạn trong thông báo cảnh cáo không."
+      },
+      "actionPrompt": {
+        "public": [
+          "{user} đã bị cảnh cáo bởi {admin}, vì `{reason}`.",
+          "{admin} đã cảnh cáo {user} vì `{reason}`.",
+          "{user} bị {admin} cảnh cáo, vì `{reason}`."
+        ],
+        "private": [
+          "Bạn đã bị cảnh cáo khỏi server bởi {admin} vì `{reason}`. Vui lòng đọc kĩ cảnh cáo trước khi tiếp tục tương tác với server.",
+          "{admin} đã cảnh cáo bạn, bởi vì `{reason}`. Vui lòng đọc kĩ cảnh cáo trước khi tiếp tục tương tác với server.",
+          "{admin} đã quyết định cảnh cáo bạn, vì `{reason}`. Vui lòng đọc kĩ cảnh cáo trước khi tiếp tục tương tác với server."
+        ]
+      }
+    },
+    "chat": {
+      "commandDescription": "Trả lời câu hỏi của bạn bằng GPT-4 của OpenAI.",
+      "argumentDescription": {
+        "prompt": "Yêu cầu của bạn"
+      },
+      "card": {
+        "title": "GPT-4  —  Đang trả lời...",
+        "titleComplete": "GPT-4  —  Hỏi đáp",
+        "prompt": "Yêu cầu",
+        "answer": "Trả lời"
+      },
+      "stopGeneration": "Dừng trả lời",
+      "noEthics": "Nhân tâm của AI đã bị tắt. Tác giả của bot hoàn toàn không chịu trách nhiệm về nội dung của AI.",
+      "error": {
+        "noResponse": "Lỗi: OpenAI không trả lời yêu cầu của bạn. Đây là không phải là lỗi của bot. Bạn có thể thử lại sau.",
+        "outputCut": "[dừng trả lời]"
+      }
+    },
+    "shitpost": {
+      "commandDescription": "Tập hợp các công cụ để giúp một shitposter chuyên nghiệp hành nghề."
+    },
+    "shitpost_cringe": {
+      "commandDescription": "Làm cho lời nói của bạn cringe bằng cách cố tình đánh vần sai.",
+      "argumentDescription": {
+        "prompt": "Đoạn văn cần làm cringe"
+      }
+    },
+    "shitpost_emoji": {
+      "commandDescription": "Chèn một đống emoji vào đoạn văn của bạn.",
+      "argumentDescription": {
+        "prompt": "Đoạn văn cần thêm emoji"
+      }
+    },
+    "wfsolver": {
+      "commandDescription": "Đưa ra những đáp án khả thi cho những bài word form.",
+      "argumentDescription": {
+        "query": "Từ nguyên",
+        "pos": "Từ loại",
+        "max": "Giới hạn số từ cần tra"
+      },
+      "card": {
+        "resultTitle": "Kết quả tìm kiếm",
+        "research": "Tìm hiểu sâu hơn"
+      }
+    },
+    "music_play": {
+      "commandDescription": "Tìm kiếm bài nhạc trên YouTube, rồi bật nó trong kênh thoại.",
+      "argumentDescription": {
+        "query_or_url": "Từ khóa tìm kiếm hoặc URL video"
+      }
+    },
+    "music_pause": {
+      "commandDescription": "Tạm dừng bài nhạc đang chơi."
+    },
+    "music_stop": {
+      "commandDescription": "Dừng bài nhạc đang chơi và rời khỏi kênh thoại."
+    },
+    "music_skip": {
+      "commandDescription": "Bỏ qua bài nhạc hiện tại. Nếu hàng chờ không còn bài hát nào thì rời khỏi kênh thoại."
+    },
+    "music_list": {
+      "commandDescription": "Liệt kê những bài hát trong hàng chờ."
+    },
+    "music_status": {
+      "commandDescription": "Trả lại thời gian bài hát đã chạy."
+    },
+    "music": {
+      "chooserPlaceholder": "Hãy chọn một bài hát.",
+      "actions": {
+        "nowPlaying": "Đang chơi:",
+        "addedQueue": "Đã thêm vào hàng chờ:"
+      },
+      "playButton": "Chơi",
+      "card": {
+        "likeDislike": "Thích / Không thích",
+        "channel": "Kênh",
+        "duration": "Thời lượng",
+        "views": "Lượt xem",
+        "uploadDate": "Ngày đăng",
+        "requestedTemplate": "Yêu cầu bởi {name}"
+      },
+      "error": {
+        "notInVoice": "Bạn đang không ở trong kênh thoại nào. Bạn phải tham gia một kênh thoại trước khi sử dụng câu lệnh này.",
+        "notPlaying": "Hiện không đang chơi bài hát nào."
+      },
+      "queueEndDisconnect": "Hàng chờ đã hết. Tôi sẽ ngắt kết nối khỏi kênh thoại.",
+      "disconnected": "OK. Tôi sẽ ngắt kết nối khỏi kênh thoại.",
+      "paused": "Đã tạm dừng.",
+      "resumed": "Đã tiếp tục.",
+      "status": "Bài hát đang chơi"
+    },
+    "setup": {
+      "noDM": "Đừng DM tôi!",
+      "noDMok": "OK, tôi sẽ không DM bạn nữa. Bạn có thể dùng `/settings enableDM true` để bật lại DM.",
+      "card": "## DỰ ÁN PHƯỢNG HOÀNG\nĐây là setup lần đầu riêng của bạn.\nHãy chọn ngôn ngữ của bạn để tiếp tục: (*nếu bạn không chọn, ngôn ngữ mặc định của bạn sẽ được đặt thành tiếng Việt*)",
+      "languageSuccess": "Ngôn ngữ của bạn đã được đặt thành {lang}. Bạn có thể thay đổi bằng lệnh `/settings language`."
+    },
+    "whatsup": {
+      "commandDescription": "Liệt kê nhiệm vụ tiếp theo cần làm.",
+      "showMorePlaceholder": "Choose event to show more",
+      "reportCard": "BÁO CÁO >> Nhiệm vụ tiếp theo:\n{asn}\nChoose one of the events listed below for more information.",
+      "nothing": "Hiện không có công việc nào.",
+      "extra": {
+        "adder": "Author name",
+        "date": "Added date",
+        "description": "Description"
+      }
+    }
+  }
+}

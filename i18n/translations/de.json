@@ -1,0 +1,312 @@
+{
+  "test": "de_OK",
+  "boilerplate": {
+    "invalidArgument": "Sie haben ein ungültiges Argument angegeben: `{arg_name} = {inp}` *(erwartet einen Wert von `{arg_type}`)*.",
+    "noPermission": "Ihre Berechtigung zum Ausführen dieses Befehls reicht nicht aus.",
+    "argumentType": {
+      "int": "ganze Zahl",
+      "str": "String-Literal",
+      "choice": "Auswahl",
+      "bool": "wahr falsch",
+      "timeStr": "Zeitzeichenfolge"
+    },
+    "levels": {
+      "info": "die Info",
+      "success": "Erfolg",
+      "warning": "Warnung",
+      "error": "Fehler",
+      "severe": "schwer"
+    },
+    "anonymous": "anonym",
+    "noReason": "kein Grund",
+    "success": [
+      "Die Operation war erfolgreich",
+      "OK",
+      "Aufgabe erfolgreich abgeschlossen"
+    ],
+    "failure": [
+      "Es ist ein Fehler aufgetreten",
+      "Fehlgeschlagen",
+      "Der Abschluss der Aufgabe ist fehlgeschlagen"
+    ],
+    "cancelled": [
+      "Der Abbruchvorgang war erfolgreich",
+      "Abgesagt",
+      "Aufgabe erfolgreich abgebrochen"
+    ],
+    "confirmCancel": [
+      [
+        "Bestätigen",
+        "Stornieren"
+      ],
+      [
+        "Hiermit bestätige ich meine Entscheidung",
+        "Machen Sie die Entscheidung ungültig"
+      ],
+      [
+        "OK",
+        "Stornieren"
+      ],
+      [
+        "Ja",
+        "Zurück"
+      ],
+      [
+        "Ja",
+        "Jetzt"
+      ],
+      [
+        "Ja",
+        "Nein"
+      ]
+    ],
+    "date": "%-d/%-m/%Y"
+  },
+  "commands": {
+    "ban": {
+      "commandDescription": "Sperrt einen Benutzer.",
+      "argumentDescription": {
+        "user": "Der Benutzer, den Sie sperren möchten.",
+        "reason": "Der Grund, warum Sie diesen Benutzer sperren möchten.",
+        "quiet": "Senden Sie die Ankündigung (der betroffene Benutzer würde weiterhin die DM erhalten).",
+        "anonymous": "Ob Ihr Benutzername in der Ankündigung angezeigt werden soll."
+      },
+      "confirmationPrompt": [
+        "Bitte bestätigen Sie Ihre Entscheidung, {user} zu sperren.",
+        "Sind Sie sicher, dass Sie {Benutzer} sperren möchten?",
+        "Wollen Sie wirklich, dass {user} verschwindet und nie wieder auf diesen Server zurückkehrt? (Sie werden sehr traurig sein)",
+        "{Benutzer} sperren?",
+        "Wirklich? Benutzer blocken}?",
+        "Bitte bestätigen Sie, dass Sie {Benutzer} sperren möchten."
+      ],
+      "actionPrompt": {
+        "public": [
+          "{user} wurden von {admin} wegen `{reason}` gesperrt.",
+          "{admin} hat {user} aus `{reason}` gesperrt.",
+          "{user} wurden aus `{reason}` vom Bannhammer von {admin} geschlagen."
+        ],
+        "private": [
+          "Du wurdest wegen `{reason}` von {admin} gesperrt. Von nun an können Sie nicht mehr an Gesprächen auf diesem Server teilnehmen. Sie können die Moderatoren um eine Begnadigung oder eine erneute Prüfung bitten, indem Sie diese Direktnachricht eingeben, falls Sie deren Entscheidung für fehlerhaft halten.",
+          "{admin} hat Sie daran gehindert, an ihrem Server teilzunehmen, indem es Sie aus `{reason}` gesperrt hat. Sollten Sie der Meinung sein, dass die Entscheidung fehlerhaft ist, können Sie per Nachricht in dieser Direktnachricht um Begnadigung oder erneute Prüfung bitten.",
+          "{admin} hat beschlossen, Sie aus `{reason}` zu sperren. Sie können nicht mehr an ihrem Server teilnehmen. Sollten Sie der Meinung sein, dass die Entscheidung fehlerhaft ist, ist eine Begnadigung oder eine erneute Prüfung durch eine Nachricht in dieser Direktnachricht möglich."
+        ]
+      }
+    },
+    "unban": {
+      "commandDescription": "Hebt die Sperre eines Benutzers auf.",
+      "argumentDescription": {
+        "user": "Der Benutzer, den Sie entsperren möchten.",
+        "reason": "Der Grund, warum Sie diesen Benutzer entsperren möchten.",
+        "quiet": "Senden Sie die Ankündigung (der betroffene Benutzer würde weiterhin die DM erhalten).",
+        "anonymous": "Ob Ihr Benutzername in der Ankündigung angezeigt werden soll."
+      },
+      "confirmationPrompt": [
+        "Bitte bestätigen Sie Ihre Entscheidung, die Sperre von {user} aufzuheben.",
+        "Sind Sie sicher, dass Sie die Sperre von {user} aufheben möchten?",
+        "Möchten Sie wirklich zulassen, dass {user} zum Server zurückkehren kann? (Sie könnten den Server überfallen)",
+        "{Benutzer} entsperren?",
+        "Wirklich? Sperre für {Benutzer} aufheben?",
+        "Bitte bestätigen Sie, dass Sie {user} entsperren möchten."
+      ],
+      "actionPrompt": {
+        "public": [
+          "{user} wurden von {admin} wegen `{reason}` aufgehoben.",
+          "{admin} hat die Sperre von {user} für `{reason}` aufgehoben.",
+          "{user} wurden von {admin} aus `{reason}` begnadigt."
+        ],
+        "private": [
+          "Die Sperrung für {admin} wurde aus `{reason}` aufgehoben. Sie können jetzt am Server teilnehmen.",
+          "{admin} hat Ihnen die Teilnahme an ihrem Server ermöglicht, indem es Sie aus `{reason}` entsperrt hat. Jetzt können Sie Nachrichten an den Server senden.",
+          "{admin} hat beschlossen, Sie aus `{reason}` zu begnadigen. Sie können jetzt am Server teilnehmen."
+        ]
+      }
+    },
+    "kick": {
+      "commandDescription": "Tritt einen Benutzer.",
+      "argumentDescription": {
+        "user": "Der Benutzer, den Sie rausschmeißen möchten.",
+        "reason": "Der Grund, warum Sie diesen Benutzer rausschmeißen möchten.",
+        "quiet": "Senden Sie die Ankündigung (der betroffene Benutzer würde weiterhin die DM erhalten).",
+        "anonymous": "Ob Ihr Benutzername in der Ankündigung angezeigt werden soll."
+      },
+      "confirmationPrompt": [
+        "Bitte bestätigen Sie Ihre Entscheidung, {user} zu kündigen.",
+        "Sind Sie sicher, dass Sie 0 $ vom Server entfernen möchten?",
+        "Wollen Sie wirklich, dass {user} von diesem Server verschwindet? (Sie könnten zurückkehren, wenn sie wollten)",
+        "0 $ vom Server werfen?",
+        "Wirklich? {Benutzer} rausschmeißen?",
+        "Bitte bestätigen Sie, dass Sie {user} rausschmeißen möchten."
+      ],
+      "actionPrompt": {
+        "public": [
+          "{user} wurden von {admin} gekickt, weil `{reason}`.",
+          "{admin} hat {user} aus `{reason}` gekickt.",
+          "{user} wurden aus `{reason}` vom Fuß von {admin} getroffen und flogen aus dem Server."
+        ],
+        "private": [
+          "Du wurdest wegen `{reason}` um {admin} gekickt.",
+          "{admin} hat Sie daran gehindert, an ihrem Server teilzunehmen, indem es Sie für 1 $ gekickt hat",
+          "{admin} hat beschlossen, dich aus `{reason}` zu rausschmeißen."
+        ]
+      }
+    },
+    "isolate": {
+      "commandDescription": "Isoliert einen Benutzer.",
+      "argumentDescription": {
+        "user": "Der Benutzer, den Sie isolieren möchten.",
+        "reason": "Der Grund, warum Sie isolierende Benutzer sperren möchten.",
+        "duration": "Die Dauer, für die Sie diesen Benutzer isolieren möchten.",
+        "quiet": "Senden Sie die Ankündigung (der betroffene Benutzer würde weiterhin die DM erhalten).",
+        "anonymous": "Ob Ihr Benutzername in der Ankündigung angezeigt werden soll."
+      },
+      "confirmationPrompt": [
+        "Bitte bestätigen Sie Ihre Entscheidung, {user} zu isolieren.",
+        "Sind Sie sicher, dass Sie {user} isolieren möchten?",
+        "Willst du wirklich, dass {user} die Klappe hält? (Sie werden nicht in der Lage sein, etwas zu sagen oder mit irgendetwas zu interagieren, auch nicht zu reagieren)",
+        "{Benutzer} isolieren?",
+        "Wirklich? {Benutzer} isolieren?",
+        "Bitte bestätigen Sie, dass Sie {user} isolieren möchten."
+      ],
+      "actionPrompt": {
+        "public": [
+          "{user} wurden von {admin} isoliert, weil `{reason}`. Sie werden nach {duration} zurückkehren.",
+          "{admin} isolierte {user} für `{reason}`. Nach {duration} dürfen sie wieder reden.",
+          "{user} wurden von der isolierenden Crew von {admin} aus `{reason}` getroffen. Sie werden nach 1 $ freigegeben"
+        ],
+        "private": [
+          "Sie wurden aus `{reason}` von {admin} isoliert. Sie können bis zum {duration} nicht an Unterhaltungen auf diesem Server teilnehmen. Sie können bei den Moderatoren eine Begnadigung oder eine Verkürzung der Dauer beantragen, indem Sie diese Direktnachricht eingeben, falls Sie deren Entscheidung für fehlerhaft halten.",
+          "{admin} hat Sie daran gehindert, an ihrem Server teilzunehmen, indem es Sie aus `{reason}` isoliert hat. Sie können bis zum {duration} nicht an Unterhaltungen auf diesem Server teilnehmen. Sollten Sie der Meinung sein, dass die Entscheidung fehlerhaft ist, können Sie per Nachricht in dieser Direktnachricht eine Begnadigung oder eine Verkürzung der Dauer beantragen.",
+          "{admin} hat beschlossen, Sie aus `{reason}` zu isolieren. Sie können bis {duration} nicht an ihrem Server teilnehmen. Eine Begnadigung oder eine Verkürzung der Dauer ist per Nachricht in dieser Direktnachricht möglich, falls Sie deren Entscheidung für fehlerhaft halten."
+        ]
+      }
+    },
+    "warn": {
+      "commandDescription": "Warnt einen Benutzer.",
+      "argumentDescription": {
+        "user": "Der Benutzer, den Sie warnen möchten.",
+        "prompt": "Der Warninhalt.",
+        "anonymous": "Ob Ihr Benutzername in der Ankündigung angezeigt werden soll."
+      },
+      "actionPrompt": {
+        "public": [
+          "{user} wurden von {admin} gewarnt, weil `{reason}`.",
+          "{admin} hat {user} wegen `{reason}` gewarnt.",
+          "{user} wurden aus `{reason}` vom Warnhammer von {admin} getroffen."
+        ],
+        "private": [
+          "Sie wurden von {admin} aus `{reason}` gewarnt. Bitte lesen Sie die Warnmeldung sorgfältig durch, bevor Sie mit dem Chatten fortfahren.",
+          "{admin} hat Sie auf seinem Server mit der Warnung `{reason}` gewarnt. Bitte lesen Sie die Aufforderung sorgfältig durch.",
+          "{admin} hat beschlossen, Sie aus `{reason}` zu warnen. Wir möchten, dass Sie die Warnmeldung sorgfältig lesen."
+        ]
+      }
+    },
+    "chat": {
+      "commandDescription": "Beantwortet Ihre Fragen mit GPT-4.",
+      "argumentDescription": {
+        "prompt": "Ihre Eingabeaufforderung für die KI."
+      },
+      "card": {
+        "title": "GPT-4 – Antwort generieren...",
+        "titleComplete": "GPT-4 – Generierungsergebnis",
+        "prompt": "Prompt",
+        "answer": "Generierte Ausgabe"
+      },
+      "stopGeneration": "Stoppen Sie die Generation",
+      "noEthics": "Die KI-Ethik ist außer Kraft gesetzt. Unter keinen Umständen kann der Autor dieses Bots für die Aussagen von AI haftbar gemacht werden.",
+      "error": {
+        "noResponse": "Es ist ein Fehler aufgetreten: OpenAI hat nicht auf Ihre Anfrage geantwortet. Ich kann Ihre Frage im Moment nicht beantworten. Sie können es jedoch später jederzeit noch einmal versuchen.",
+        "outputCut": "[Textgenerierung angehalten]"
+      }
+    },
+    "shitpost": {
+      "commandDescription": "Shitposting-Dienstprogramme für professionelle Shitposter."
+    },
+    "shitpost_cringe": {
+      "commandDescription": "Verwenden Sie eine erschreckende Schreibweise, damit der Eingabetext dumm klingt.",
+      "argumentDescription": {
+        "prompt": "Der zu transformierende Text."
+      }
+    },
+    "shitpost_emoji": {
+      "commandDescription": "Überall im Eingabetext sind Wurf-Emojis zu sehen.",
+      "argumentDescription": {
+        "prompt": "Der zu transformierende Text."
+      }
+    },
+    "wfsolver": {
+      "commandDescription": "Gibt mögliche Antworten auf Wortformübungen.",
+      "argumentDescription": {
+        "query": "Das Wort zum Nachschlagen",
+        "pos": "Der Teil der Rede des Ergebnisses",
+        "max": "Maximale Suchergebnisse"
+      },
+      "card": {
+        "resultTitle": "Ergebnis der Wortsuche",
+        "research": "Untersuchen"
+      }
+    },
+    "music_play": {
+      "commandDescription": "Sucht ein Lied auf YouTube und spielt es ab.",
+      "argumentDescription": {
+        "query_or_url": "Ihre Suchanfrage oder Video-URL."
+      }
+    },
+    "music_pause": {
+      "commandDescription": "Pausiert das aktuell abgespielte Lied."
+    },
+    "music_stop": {
+      "commandDescription": "Stoppt das aktuell abgespielte Lied und verlässt den Sprachkanal."
+    },
+    "music_skip": {
+      "commandDescription": "Überspringt das aktuell wiedergegebene Lied. Wenn die Warteschlange beendet ist, wird der Sprachkanal verlassen."
+    },
+    "music_list": {
+      "commandDescription": "Listet die Songs auf, die sich derzeit in der Warteschlange befinden."
+    },
+    "music_status": {
+      "commandDescription": "Gibt den Fortschritt der Songwiedergabe zurück."
+    },
+    "music": {
+      "chooserPlaceholder": "Bitte wählen Sie ein Lied aus.",
+      "actions": {
+        "nowPlaying": "OK. Läuft gerade:",
+        "addedQueue": "OK. Zur Warteschlange hinzugefügt:"
+      },
+      "playButton": "Spielen",
+      "card": {
+        "likeDislike": "Mag Abneigungen",
+        "channel": "Kanal",
+        "duration": "Dauer",
+        "views": "Ansichten",
+        "uploadDate": "Datum des Hochladens",
+        "requestedTemplate": "Angefordert von {name}"
+      },
+      "error": {
+        "notInVoice": "Sie befinden sich nicht in einem Sprachkanal. Treten Sie zuerst einem bei, bevor Sie diesen Befehl verwenden.",
+        "notPlaying": "Ich spiele derzeit nichts auf deinem Kanal ab."
+      },
+      "queueEndDisconnect": "Die Warteschlange ist beendet. Trennen.",
+      "disconnected": "Die Wiedergabe wurde gestoppt.",
+      "paused": "Wiedergabe pausiert.",
+      "resumed": "Die Wiedergabe wurde fortgesetzt.",
+      "status": "Wiedergabestatus"
+    },
+    "setup": {
+      "noDM": "Schreib mir keine DM!",
+      "noDMok": "OK, ich werde dir keine DM mehr schicken. Verwenden Sie `/settings enableDM true`, um es wieder zu aktivieren.",
+      "card": "## DAS PHOENIX-PROJEKT\nDies ist die personalisierte, erstmalige Einrichtung. Bitte wählen Sie Ihre Sprache, um fortzufahren: (*Wenn Sie diese Nachricht ignorieren, wird Ihre Sprache auf Vietnamesisch eingestellt*)",
+      "languageSuccess": "Ihre Sprache wurde in {lang} geändert. Sie können es später ändern, indem Sie `/settings language` verwenden."
+    },
+    "whatsup": {
+      "commandDescription": "Zeigt eingehende Ereignisse im Kalender an.",
+      "showMorePlaceholder": "Wählen Sie ein Ereignis aus, um mehr anzuzeigen",
+      "reportCard": "BERICHT >> Kommende Aufgaben\n{asn}\nWählen Sie eine der unten aufgeführten Veranstaltungen aus, um weitere Informationen zu erhalten.",
+      "nothing": "Es liegen keine anstehenden Aufgaben vor.",
+      "extra": {
+        "adder": "Autorenname",
+        "date": "Datum hinzugefügt",
+        "description": "Beschreibung"
+      }
+    }
+  }
+}

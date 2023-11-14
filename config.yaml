@@ -1,0 +1,38 @@
+config:
+  credentials:
+    email: None
+    password: None
+    gcloud:
+      apiKey: None
+      sa: None
+    token: None
+  backend:
+    configSheet: None
+  general:
+    locale: vi
+    activity: nói ít th
+  modules:
+    gcal:
+      calid: None
+    # Moderation operation, including the /ban command, the anti-spam and
+    # anti-raid system, the report system.
+    moderation:
+      # Master enable. This have to be enabled in order for all the
+      # moderation module to work.
+      enabled: True
+      # Command-related configuration (will be overriden by the master config.)
+      modCommands:
+        enabled: True
+    # Reduce clogging by allowing the bot to delete its messages.
+    antiClog:
+      enabled: True
+      # The emoji which will be used to vote to delete the message.
+      emoji: 🚮
+      # The threshold at which the message will be removed, when the
+      # votes (excluding votes from bots) is greater or equals
+      # this number.
+      threshold: 3
+    antiRaid:
+      enable: True
+      guilds: [ ]
+      spamThreshold: 5

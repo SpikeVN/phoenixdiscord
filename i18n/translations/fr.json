@@ -1,0 +1,312 @@
+{
+  "test": "fr_US_OK",
+  "boilerplate": {
+    "invalidArgument": "Vous avez donné un argument non valide: `{arg_name} = {inp}` *(valeur attendue de 0$)*.",
+    "noPermission": "Vous ne disposez pas des autorisations suffisantes pour exécuter cette commande.",
+    "argumentType": {
+      "int": "entier",
+      "str": "chaîne littérale",
+      "choice": "choix",
+      "bool": "vrai faux",
+      "timeStr": "chaîne de temps"
+    },
+    "levels": {
+      "info": "Info",
+      "success": "succès",
+      "warning": "avertissement",
+      "error": "erreur",
+      "severe": "grave"
+    },
+    "anonymous": "anonyme",
+    "noReason": "sans raison",
+    "success": [
+      "Opération réussie",
+      "D'ACCORD",
+      "Tâche terminée avec succès"
+    ],
+    "failure": [
+      "Échec rencontré",
+      "Échoué",
+      "L'achèvement de la tâche a échoué"
+    ],
+    "cancelled": [
+      "L'opération d'annulation a réussi",
+      "Annulé",
+      "Tâche annulée avec succès"
+    ],
+    "confirmCancel": [
+      [
+        "Confirmer",
+        "Annuler"
+      ],
+      [
+        "Je confirme par la présente ma décision",
+        "Invalider la décision"
+      ],
+      [
+        "D'ACCORD",
+        "Annuler"
+      ],
+      [
+        "Oui",
+        "Recul"
+      ],
+      [
+        "Ouais",
+        "Maintenant"
+      ],
+      [
+        "Ouais",
+        "Non"
+      ]
+    ],
+    "date": "%-d %B %Y"
+  },
+  "commands": {
+    "ban": {
+      "commandDescription": "Interdit un utilisateur.",
+      "argumentDescription": {
+        "user": "L'utilisateur que vous souhaitez bannir.",
+        "reason": "La raison pour laquelle vous souhaitez bannir cet utilisateur.",
+        "quiet": "Envoyez l'annonce (l'utilisateur concerné recevra toujours le DM).",
+        "anonymous": "Si vous souhaitez que votre nom d'utilisateur soit affiché dans l'annonce."
+      },
+      "confirmationPrompt": [
+        "Veuillez confirmer votre décision de bannir {user}.",
+        "Êtes-vous sûr de vouloir bannir {user}?",
+        "Voulez-vous vraiment que {user} disparaisse et ne revienne jamais sur ce serveur? (ils seront très tristes)",
+        "Interdire {user}?",
+        "Vraiment? Utilisateur banni}?",
+        "Veuillez confirmer que vous souhaitez bannir {user}."
+      ],
+      "actionPrompt": {
+        "public": [
+          "{user} a été banni par {admin}, à cause de `{reason}`.",
+          "0$ a interdit 1$ pour `{reason}`.",
+          "0$ a été frappé par le marteau de bannissement de {admin}, pour `{reason}`."
+        ],
+        "private": [
+          "Vous avez été banni de 0$ pour `{reason}`. À partir de maintenant, vous ne pourrez plus participer aux conversations sur ce serveur. Vous pouvez demander une grâce ou un réexamen aux modérateurs en tapant ce DM si vous trouvez leur décision erronée.",
+          "{admin} vous a empêché de participer à leur serveur en vous bannissant pour «{reason}». Une grâce ou un réexamen peut être demandé par message dans ce DM si vous trouvez leur décision erronée.",
+          "{admin} a décidé de vous bannir pour «{reason}». Vous ne pouvez plus participer à leur serveur. Le pardon ou le réexamen sont disponibles par message dans ce DM si vous trouvez leur décision erronée."
+        ]
+      }
+    },
+    "unban": {
+      "commandDescription": "Débannit un utilisateur.",
+      "argumentDescription": {
+        "user": "L'utilisateur que vous souhaitez débannir.",
+        "reason": "La raison pour laquelle vous souhaitez débannir cet utilisateur.",
+        "quiet": "Envoyez l'annonce (l'utilisateur concerné recevra toujours le DM).",
+        "anonymous": "Si vous souhaitez que votre nom d'utilisateur soit affiché dans l'annonce."
+      },
+      "confirmationPrompt": [
+        "Veuillez confirmer votre décision de retirer le bannissement de {user}.",
+        "Êtes-vous sûr de vouloir annuler le bannissement de {user}?",
+        "Voulez-vous vraiment autoriser 0$ à revenir sur le serveur? (ils pourraient attaquer le serveur)",
+        "Annuler le bannissement de {user}?",
+        "Vraiment? Annuler le bannissement de {user}?",
+        "Veuillez confirmer que vous souhaitez annuler le bannissement de {user}."
+      ],
+      "actionPrompt": {
+        "public": [
+          "{user} n'a pas été banni par {admin}, car `{reason}`.",
+          "0$ a libéré 1$ pour `{reason}`.",
+          "0$ a été gracié par {admin}, pour `{reason}`."
+        ],
+        "private": [
+          "Vous avez été débanni de 0$ pour `{reason}`. Vous pouvez participer au serveur maintenant.",
+          "{admin} vous a permis de participer à leur serveur en vous annulant pour `{reason}`. Vous pouvez maintenant envoyer un message sur le serveur.",
+          "{admin} a décidé de vous pardonner pour «{reason}». Vous pouvez désormais participer au serveur."
+        ]
+      }
+    },
+    "kick": {
+      "commandDescription": "Expulse un utilisateur.",
+      "argumentDescription": {
+        "user": "L'utilisateur que vous souhaitez expulser.",
+        "reason": "La raison pour laquelle vous souhaitez expulser cet utilisateur.",
+        "quiet": "Envoyez l'annonce (l'utilisateur concerné recevra toujours le DM).",
+        "anonymous": "Si vous souhaitez que votre nom d'utilisateur soit affiché dans l'annonce."
+      },
+      "confirmationPrompt": [
+        "Veuillez confirmer votre décision d'expulser {user}.",
+        "Êtes-vous sûr de vouloir supprimer 0$ du serveur?",
+        "Voulez-vous vraiment que {user} disparaisse de ce serveur? (ils pourraient revenir s'ils le voulaient)",
+        "Retirer 0$ du serveur?",
+        "Vraiment? Expulser {user}?",
+        "Veuillez confirmer que vous souhaitez expulser {user}."
+      ],
+      "actionPrompt": {
+        "public": [
+          "0$ a été expulsé par {admin}, à cause de `{reason}`.",
+          "0$ a lancé 1$ pour `{reason}`.",
+          "0$ a été touché par le pied de {admin}, sortant du serveur, pour `{reason}`."
+        ],
+        "private": [
+          "Vous avez été expulsé de 0$ pour `{reason}`.",
+          "0 $ vous a empêché de participer à leur serveur en vous donnant 1 $",
+          "{admin} a décidé de vous expulser pour «{reason}»."
+        ]
+      }
+    },
+    "isolate": {
+      "commandDescription": "Isole un utilisateur.",
+      "argumentDescription": {
+        "user": "L'utilisateur que vous souhaitez isoler.",
+        "reason": "La raison pour laquelle vous souhaitez interdire l'utilisateur isolé.",
+        "duration": "La durée pendant laquelle vous souhaitez isoler cet utilisateur.",
+        "quiet": "Envoyez l'annonce (l'utilisateur concerné recevra toujours le DM).",
+        "anonymous": "Si vous souhaitez que votre nom d'utilisateur soit affiché dans l'annonce."
+      },
+      "confirmationPrompt": [
+        "Veuillez confirmer votre décision d'isoler {user}.",
+        "Êtes-vous sûr de vouloir isoler {user}?",
+        "Tu veux vraiment 0 $, tais-toi ? (ils ne pourront ni dire ni interagir avec quoi que ce soit, y compris réagir)",
+        "Isoler {user}?",
+        "Vraiment? Isoler {user}?",
+        "Veuillez confirmer que vous souhaitez isoler {user}."
+      ],
+      "actionPrompt": {
+        "public": [
+          "0$ a été isolé par {admin}, à cause de `{reason}`. Ils reviendront après {duration}.",
+          "0 $ a isolé 1 $ pour `{reason}`. Après {duration}, ils pourront à nouveau parler.",
+          "{user} a été frappé par l'équipe d'isolement de {admin}, pour `{reason}`. Ils seront libérés après 1 $"
+        ],
+        "private": [
+          "Vous avez été isolé de 0$ pour `{reason}`. Vous ne pourrez pas participer aux conversations sur ce serveur avant {duration}. Vous pouvez demander une grâce ou une réduction de la durée aux modérateurs en tapant ce DM si vous trouvez leur décision erronée.",
+          "{admin} vous a empêché de participer à leur serveur en vous isolant pour «{reason}». Vous ne pourrez pas participer aux conversations sur ce serveur avant {duration}. Une grâce ou une réduction de la durée peut être demandée par message dans ce DM si vous trouvez leur décision erronée.",
+          "{admin} a décidé de vous isoler pour «{reason}». Vous ne pouvez pas participer à leur serveur avant {duration}. Une grâce ou une réduction de la durée est disponible par message dans ce DM si vous trouvez leur décision erronée."
+        ]
+      }
+    },
+    "warn": {
+      "commandDescription": "Avertit un utilisateur.",
+      "argumentDescription": {
+        "user": "L'utilisateur que vous souhaitez avertir.",
+        "prompt": "Le contenu de l'avertissement.",
+        "anonymous": "Si vous souhaitez que votre nom d'utilisateur soit affiché dans l'annonce."
+      },
+      "actionPrompt": {
+        "public": [
+          "{user} a été averti par {admin}, car `{reason}`.",
+          "{admin} a averti {user} pour `{reason}`.",
+          "0$ a été frappé par le marteau d'avertissement de {admin}, pour `{reason}`."
+        ],
+        "private": [
+          "Vous avez été averti par {admin} pour `{reason}`. Veuillez lire attentivement l'invite d'avertissement avant de continuer à discuter.",
+          "{admin} vous a prévenu sur son serveur en vous avertissant pour `{reason}`. Veuillez lire attentivement l'invite.",
+          "{admin} a décidé de vous avertir pour `{reason}`. Nous aimerions que vous lisiez attentivement l’invite d’avertissement."
+        ]
+      }
+    },
+    "chat": {
+      "commandDescription": "Répond à vos questions en utilisant GPT-4.",
+      "argumentDescription": {
+        "prompt": "Votre invite pour l'IA."
+      },
+      "card": {
+        "title": "GPT-4 — Générer une réponse...",
+        "titleComplete": "GPT-4 — Résultat de la génération",
+        "prompt": "Rapide",
+        "answer": "Sortie générée"
+      },
+      "stopGeneration": "Arrêter la génération",
+      "noEthics": "L’éthique de l’IA s’est désengagée. En aucun cas l’auteur de ce bot ne pourra être tenu responsable des propos tenus par AI.",
+      "error": {
+        "noResponse": "Une erreur s'est produite: OpenAI n'a pas répondu à votre demande. Je ne peux pas répondre à votre question pour le moment. Cependant, vous pouvez toujours réessayer plus tard.",
+        "outputCut": "[génération de texte interrompue]"
+      }
+    },
+    "shitpost": {
+      "commandDescription": "Utilitaires de shitposting pour shitposter professionnel."
+    },
+    "shitpost_cringe": {
+      "commandDescription": "Utilisez une orthographe grinçante pour rendre le texte saisi stupide.",
+      "argumentDescription": {
+        "prompt": "Le texte à transformer."
+      }
+    },
+    "shitpost_emoji": {
+      "commandDescription": "Jetez des émojis partout dans le texte saisi.",
+      "argumentDescription": {
+        "prompt": "Le texte à transformer."
+      }
+    },
+    "wfsolver": {
+      "commandDescription": "Donne des réponses possibles à des exercices de forme de mots.",
+      "argumentDescription": {
+        "query": "Le mot à rechercher",
+        "pos": "Le résultat fait partie du discours",
+        "max": "Résultats maximum à rechercher"
+      },
+      "card": {
+        "resultTitle": "Résultat de la chasse aux mots",
+        "research": "Enquêter"
+      }
+    },
+    "music_play": {
+      "commandDescription": "Recherche une chanson sur YouTube et la joue.",
+      "argumentDescription": {
+        "query_or_url": "Votre requête de recherche ou l'URL de la vidéo."
+      }
+    },
+    "music_pause": {
+      "commandDescription": "Met en pause la chanson en cours de lecture."
+    },
+    "music_stop": {
+      "commandDescription": "Arrête la chanson en cours de lecture et quitte le canal vocal."
+    },
+    "music_skip": {
+      "commandDescription": "Saute la chanson en cours de lecture. Si la file d'attente est terminée, quitte le canal vocal."
+    },
+    "music_list": {
+      "commandDescription": "Répertorie les chansons actuellement dans la file d'attente."
+    },
+    "music_status": {
+      "commandDescription": "Renvoie la progression de la lecture de la chanson."
+    },
+    "music": {
+      "chooserPlaceholder": "Veuillez choisir une chanson.",
+      "actions": {
+        "nowPlaying": "D'accord. Lecture en cours:",
+        "addedQueue": "D'accord. Ajouté à la file d'attente:"
+      },
+      "playButton": "Jouer",
+      "card": {
+        "likeDislike": "Aime n'aime pas",
+        "channel": "Canal",
+        "duration": "Durée",
+        "views": "Vues",
+        "uploadDate": "Date de dépôt",
+        "requestedTemplate": "Demandé par 0$"
+      },
+      "error": {
+        "notInVoice": "Vous n'êtes pas dans un canal vocal. Rejoignez-en un avant d’utiliser cette commande.",
+        "notPlaying": "Je ne joue actuellement rien sur votre chaîne."
+      },
+      "queueEndDisconnect": "La file d'attente est terminée. Déconnexion.",
+      "disconnected": "La lecture s'est arrêtée.",
+      "paused": "Lecture interrompue.",
+      "resumed": "La lecture a repris.",
+      "status": "Statut de lecture"
+    },
+    "setup": {
+      "noDM": "Ne m'envoyez pas de message!",
+      "noDMok": "OK, je ne vous enverrai plus de SMS. Utilisez `/settings activateDM true` pour le réactiver.",
+      "card": "## THE PHOENIX PROJECT\nIl'agit de la configuration personnalisée pour la première fois. Veuillez choisir votre langue pour continuer: (*ignorer ce message définira votre langue sur le vietnamien*)",
+      "languageSuccess": "Votre langue a été modifiée en {lang}. Vous pouvez le modifier plus tard en utilisant `/settings language`."
+    },
+    "whatsup": {
+      "commandDescription": "Affiche les événements entrants sur le calendrier.",
+      "showMorePlaceholder": "Choisissez un événement pour en afficher plus",
+      "reportCard": "REPORTAGE >> Missions à venir\n{asn}\nChoisissez l'un des événements répertoriés ci-dessous pour plus d'informations.",
+      "nothing": "Il n'y a aucune tâche à venir.",
+      "extra": {
+        "adder": "Nom de l'auteur",
+        "date": "Date d'ajout",
+        "description": "Description"
+      }
+    }
+  }
+}

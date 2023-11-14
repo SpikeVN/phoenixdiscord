@@ -1,0 +1,267 @@
+{
+  "test": "This is a test message. Replace this with LANGNAME_OK.",
+  "boilerplate": {
+    "invalidArgument": "the argument given is invalid",
+    "noPermission": "no permission prompt",
+    "argumentType": {
+      "int": "int type",
+      "str": "string type",
+      "choice": "choice type",
+      "bool": "boolean type",
+      "timeStr": "time string"
+    },
+    "levels": {
+      "info": "info",
+      "success": "success",
+      "warning": "warning",
+      "error": "error",
+      "severe": "severe"
+    },
+    "anonymous": "anonymous user",
+    "noReason": "without any reason",
+    "success": [
+      "text",
+      "indicating success"
+    ],
+    "failure": [
+      "text",
+      "indicating failure"
+    ],
+    "cancelled": [
+      "text",
+      "indicating cancellation"
+    ],
+    "confirmCancel": [
+      [
+        "formal confirm",
+        "formal cancel"
+      ],
+      [
+        "variate yes",
+        "variate no"
+      ]
+    ],
+    "date": "%d/%m/%y"
+  },
+  "commands": {
+    "ban": {
+      "commandDescription": "localized description of the /ban command.",
+      "argumentDescription": {
+        "user": "localized argument description",
+        "reason": "localized argument description",
+        "quiet": "localized argument description",
+        "anonymous": "localized argument description"
+      },
+      "confirmationPrompt": [
+        "asks the admin for confirmation of the decision.",
+        "if multiple elements are present, will be randomized."
+      ],
+      "actionPrompt": {
+        "public": [
+          "the text indicating the banning. will be randomized if multiple entries",
+          "is found and will be sent to the channel in which the command was used."
+        ],
+        "private": [
+          "the text indicating the banning. will be randomized if multiple entries",
+          "is found and will be sent to the banned user' DM."
+        ]
+      }
+    },
+    "unban": {
+      "commandDescription": "localized description of the /unban command.",
+      "argumentDescription": {
+        "user": "localized argument description",
+        "reason": "localized argument description",
+        "quiet": "localized argument description",
+        "anonymous": "localized argument description"
+      },
+      "confirmationPrompt": [
+        "asks the admin for confirmation of the decision.",
+        "if multiple elements are present, will be randomized."
+      ],
+      "actionPrompt": {
+        "public": [
+          "the text indicating the banning. will be randomized if multiple entries",
+          "is found and will be sent to the channel in which the command was used."
+        ],
+        "private": [
+          "the text indicating the banning. will be randomized if multiple entries",
+          "is found and will be sent to the banned user' DM."
+        ]
+      }
+    },
+    "kick": {
+      "commandDescription": "localized description of the /kick command.",
+      "argumentDescription": {
+        "user": "localized argument description",
+        "reason": "localized argument description",
+        "quiet": "localized argument description",
+        "anonymous": "localized argument description"
+      },
+      "confirmationPrompt": [
+        "asks the admin for confirmation of the decision.",
+        "if multiple elements are present, will be randomized."
+      ],
+      "actionPrompt": {
+        "public": [
+          "the text indicating the banning. will be randomized if multiple entries",
+          "is found and will be sent to the channel in which the command was used."
+        ],
+        "private": [
+          "the text indicating the banning. will be randomized if multiple entries",
+          "is found and will be sent to the banned user' DM."
+        ]
+      }
+    },
+    "isolate": {
+      "commandDescription": "localized description of the /isolate command.",
+      "argumentDescription": {
+        "user": "localized argument description",
+        "reason": "localized argument description",
+        "duration": "localized argument description",
+        "quiet": "localized argument description",
+        "anonymous": "localized argument description"
+      },
+      "confirmationPrompt": [
+        "asks the admin for confirmation of the decision.",
+        "if multiple elements are present, will be randomized."
+      ],
+      "actionPrompt": {
+        "public": [
+          "the text indicating the banning. will be randomized if multiple entries",
+          "is found and will be sent to the channel in which the command was used."
+        ],
+        "private": [
+          "the text indicating the banning. will be randomized if multiple entries",
+          "is found and will be sent to the banned user' DM."
+        ]
+      }
+    },
+    "warn": {
+      "commandDescription": "localized description of the /warn command.",
+      "argumentDescription": {
+        "user": "localized argument description",
+        "prompt": "localized argument description",
+        "anonymous": "localized argument description"
+      },
+      "actionPrompt": {
+        "public": [
+          "the text indicating the banning. will be randomized if multiple entries",
+          "is found and will be sent to the channel in which the command was used."
+        ],
+        "private": [
+          "the text indicating the banning. will be randomized if multiple entries",
+          "is found and will be sent to the banned user' DM."
+        ]
+      }
+    },
+    "chat": {
+      "commandDescription": "localized description of the /chat command.",
+      "argumentDescription": {
+        "prompt": "localized argument description"
+      },
+      "card": {
+        "title": "GPT-4 output card title",
+        "titleComplete": "GPT-4 output card title when ",
+        "prompt": "text indicating the information below it is the input prompt",
+        "answer": "text indicating the information below it is the AI answer"
+      },
+      "stopGeneration": "text on the stop generating button",
+      "noEthics": "prompt to let the user know that ethics is disabled.",
+      "error": {
+        "noResponse": "error when OpenAI server didn't response to bot request",
+        "outputCut": "when the AI output is cut in the middle by the stop button"
+      }
+    },
+    "shitpost": {
+      "commandDescription": "localized description of the /shitpost command."
+    },
+    "shitpost_cringe": {
+      "commandDescription": "localized description of the /shitpost cringe command.",
+      "argumentDescription": {
+        "prompt": "localized argument description"
+      }
+    },
+    "shitpost_emoji": {
+      "commandDescription": "localized description of the /shitpost emoji command.",
+      "argumentDescription": {
+        "prompt": "localized argument description"
+      }
+    },
+    "wfsolver": {
+      "commandDescription": "localized description of the /wf command.",
+      "argumentDescription": {
+        "query": "localized argument description",
+        "pos": "localized argument description",
+        "max": "localized argument description"
+      },
+      "card": {
+        "resultTitle": "lookup board result",
+        "research": "research further"
+      }
+    },
+    "music_play": {
+      "commandDescription": "localized description of the /music play command.",
+      "argumentDescription": {
+        "query_or_url": "localized argument description"
+      }
+    },
+    "music_pause": {
+      "commandDescription": "localized description of the /music pause command."
+    },
+    "music_stop": {
+      "commandDescription": "localized description of the /music stop command."
+    },
+    "music_skip": {
+      "commandDescription": "localized description of the /music skip command."
+    },
+    "music_list": {
+      "commandDescription": "localized description of the /music list command."
+    },
+    "music_status": {
+      "commandDescription": "localized description of the /music status command."
+    },
+    "music": {
+      "chooserPlaceholder": "text to show when no song was chosen",
+      "actions": {
+        "nowPlaying": "text indicating that the song is now playing",
+        "addedQueue": "text indicating that the song was added to queue"
+      },
+      "playButton": "play button label",
+      "card": {
+        "likeDislike": "Likes / Dislikes",
+        "channel": "Channel",
+        "duration": "Duration",
+        "views": "Views",
+        "uploadDate": "Upload Date",
+        "requestedTemplate": "Requested by {name}"
+      },
+      "error": {
+        "notInVoice": "user not in voice",
+        "notPlaying": "not playing anything in this channel"
+      },
+      "queueEndDisconnect": "disconnected by end of queue",
+      "disconnected": "disconnected by /music stop",
+      "paused": "playback paused",
+      "resumed": "playback resumed",
+      "status": "playback status"
+    },
+    "setup": {
+      "noDM": "Don't DM me!",
+      "noDMok": "OK, I won't DM you anymore. Use `/settings enableDM true` to turn it on again.",
+      "card": "Hi, this is Cardinal, a bot made by SpikeBonjour.\nThis is the personalized, first-time setup.\nPlease choose your language to continue: (*ignoring this message will set your language to your Discord's display language*)",
+      "languageSuccess": "Your language has been changed to {lang}. You can change it later by using `/settings language`."
+    },
+    "whatsup": {
+      "commandDescription": "Shows incoming events on the calendar.",
+      "showMorePlaceholder": "Choose event to show more",
+      "reportCard": "REPORT >> Upcoming assignments\n{asn}\nChoose one of the events listed below for more information.",
+      "nothing": "no tasks",
+      "extra": {
+        "adder": "Author name",
+        "date": "Added date",
+        "description": "Description"
+      }
+    }
+  }
+}
