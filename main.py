@@ -64,7 +64,7 @@ async def start_uvicorn():
     proc = Process(
         target=uvicorn.run,
         args=(api.app,),
-        kwargs={"port": int(os.environ["PORT"])},
+        kwargs={"port": int(os.environ["PORT"]), "host": "0.0.0.0"},
         daemon=True,
     )
     proc.start()
