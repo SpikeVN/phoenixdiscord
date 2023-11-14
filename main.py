@@ -40,7 +40,6 @@ async def on_ready():
         )
     )
     logutils.success(f"changed Discord presence.")
-    await start_uvicorn()
     logutils.success("Started uvicorn web server.")
     logutils.info(
         f"Logged in as {bot.user.name}#{bot.user.discriminator}, ID {bot.user.id}."
@@ -60,7 +59,7 @@ def load_modules():
             logutils.info(f"-> Loaded module '{m[:-3]}'.")
 
 
-async def start_uvicorn():
+def start_uvicorn():
     proc = Process(
         target=uvicorn.run,
         args=(api.app,),
@@ -68,10 +67,10 @@ async def start_uvicorn():
         daemon=True,
     )
     proc.start()
-    await asyncio.sleep(0.1)
 
 
 def main():
+    start_uvicorn()
     logutils.set_min_level(logutils.INFO)
     cfg.init_config_hive()
     i18n.init_translation_database()
