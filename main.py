@@ -12,17 +12,22 @@
 #
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
+import asyncio
 import os
 
 import ensuredeps
+import uvicorn
 import disnake
 from disnake.ext import commands
+from multiprocessing import Process
+
 
 import configuration as cfg
 
 # noinspection PyUnresolvedReferences
 import i18n
 import logutils
+import api
 
 bot = commands.Bot("!c", intents=disnake.Intents.all())
 
@@ -35,6 +40,8 @@ async def on_ready():
         )
     )
     logutils.success(f"changed Discord presence.")
+    await start_uvicorn()
+    logutils.success("Started uvicorn web server.")
     logutils.info(
         f"Logged in as {bot.user.name}#{bot.user.discriminator}, ID {bot.user.id}."
     )
@@ -51,6 +58,17 @@ def load_modules():
         elif m.endswith(".py"):
             bot.load_extension(name=f"modules.{m[:-3]}")
             logutils.info(f"-> Loaded module '{m[:-3]}'.")
+
+
+async def start_uvicorn():
+    proc = Process(
+        target=uvicorn.run,
+        args=(api.app,),
+        kwargs={"port": int(os.environ["PORT"])},
+        daemon=True,
+    )
+    proc.start()
+    await asyncio.sleep(0.1)
 
 
 def main():

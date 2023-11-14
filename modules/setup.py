@@ -33,7 +33,7 @@ class LanguageChooser(disnake.ui.Select):
         await interaction.send(
             i18n.translated_string(
                 "commands.setup.languageSuccess", i18n.get_locale(self.values[0])
-            ).format(lang=utils.get_key(i18n.AVALIABLE_LOCALES, self.values[0]))
+            ).replace("{lang}", utils.get_key(i18n.AVALIABLE_LOCALES, self.values[0]))
         )
 
 

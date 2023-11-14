@@ -120,6 +120,17 @@ class UserPunishments:
             case "isolated":
                 return self.isolated
 
+    def __setitem__(self, key, value):
+        match key:
+            case "warned":
+                self.warned = value
+            case "banned":
+                self.banned = value
+            case "kicked":
+                self.kicked = value
+            case "isolated":
+                self.isolated = value
+
 
 class User:
     def __init__(self, base_user: Union[disnake.Member, disnake.User]):
