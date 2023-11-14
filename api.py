@@ -11,8 +11,5 @@ async def root():
     return {"code": "500", "message": "API not yet available!"}
 
 
-proc = Process(
-    target=main.main,
-    daemon=True,
-)
+proc = Process(target=main.main)
 proc.start()
