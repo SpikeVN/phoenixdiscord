@@ -70,7 +70,7 @@ def start_uvicorn():
 
 
 def main():
-    start_uvicorn()
+    # start_uvicorn()
     logutils.set_min_level(logutils.INFO)
     cfg.init_config_hive()
     i18n.init_translation_database()
