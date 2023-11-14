@@ -15,6 +15,7 @@
 import asyncio
 import os
 
+import api
 import ensuredeps
 import uvicorn
 import disnake
@@ -27,7 +28,6 @@ import configuration as cfg
 # noinspection PyUnresolvedReferences
 import i18n
 import logutils
-import api
 
 bot = commands.Bot("!c", intents=disnake.Intents.all())
 
@@ -70,7 +70,7 @@ def start_uvicorn():
 
 
 def main():
-    # start_uvicorn()
+    start_uvicorn()
     logutils.set_min_level(logutils.INFO)
     cfg.init_config_hive()
     i18n.init_translation_database()
