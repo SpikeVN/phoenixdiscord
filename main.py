@@ -15,12 +15,9 @@
 import asyncio
 import os
 
-import api
 import ensuredeps
-import uvicorn
 import disnake
 from disnake.ext import commands
-from multiprocessing import Process
 
 
 import configuration as cfg
@@ -59,18 +56,7 @@ def load_modules():
             logutils.info(f"-> Loaded module '{m[:-3]}'.")
 
 
-def start_uvicorn():
-    proc = Process(
-        target=uvicorn.run,
-        args=(api.app,),
-        kwargs={"port": int(os.environ["PORT"]), "host": "0.0.0.0"},
-        daemon=True,
-    )
-    proc.start()
-
-
 def main():
-    start_uvicorn()
     logutils.set_min_level(logutils.INFO)
     cfg.init_config_hive()
     i18n.init_translation_database()
