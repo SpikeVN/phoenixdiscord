@@ -277,14 +277,14 @@
       "languageSuccess": "ngôn ngữ của m đã được đặt thành {lang}. muốn đổi th dùng `/settings language`."
     },
     "whatsup": {
-      "commandDescription": "Shows incoming events on the calendar.",
-      "showMorePlaceholder": "Choose event to show more",
-      "reportCard": "REPORT >> Upcoming assignments\n{asn}\nChoose one of the events listed below for more information.",
+      "commandDescription": "xem hay bản kiểm điểm",
+      "showMorePlaceholder": "click để xem thêm thông tin",
+      "reportCard": "báo cáo bt\n{asn}\nbấm để xem thêm.",
       "nothing": "hiện k có j",
       "extra": {
-        "adder": "Author name",
-        "date": "Added date",
-        "description": "Description"
+        "adder": "thằng viết",
+        "date": "ngày đặt",
+        "description": "mô tả"
       }
     }
   }

@@ -5,6 +5,7 @@ import configuration as cfg
 import database
 import i18n
 import logutils
+import security
 import utils
 from modules.moderation.commands import enough_permission
 
@@ -31,9 +32,12 @@ class LanguageChooser(disnake.ui.Select):
         usr = database.User(interaction.author)
         usr.locale = i18n.get_locale(self.values[0])
         await interaction.send(
-            i18n.translated_string(
-                "commands.setup.languageSuccess", i18n.get_locale(self.values[0])
-            ).replace("{lang}", utils.get_key(i18n.AVALIABLE_LOCALES, self.values[0]))
+            security.safe_format(
+                i18n.translated_string(
+                    "commands.setup.languageSuccess", i18n.get_locale(self.values[0])
+                ),
+                lang=utils.get_key(i18n.AVALIABLE_LOCALES, self.values[0]),
+            )
         )
 
 
@@ -81,7 +85,10 @@ class Setup(commands.Cog):
         usr = database.User(interaction.author)
         usr.locale = i18n.get_locale(language.split()[0])
         await interaction.send(
-            i18n.translated_string("commands.setup.languageSuccess", usr.locale)
+            security.safe_format(
+                i18n.translated_string("commands.setup.languageSuccess", usr.locale),
+                lang=usr.locale.value.native_name,
+            )
         )
 
     @commands.slash_command(name="setuplang", description="Admin Internal Command")

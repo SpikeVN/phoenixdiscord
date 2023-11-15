@@ -47,9 +47,7 @@ async def enough_permission(interaction: disnake.ApplicationCommandInteraction):
             return True
     else:
         await interaction.response.send_message(
-            random.choice(
-                i18n.translated_string("boilerplate.noPermission", interaction.author)
-            )
+            i18n.translated_string("boilerplate.noPermission", interaction.author)
         )
         logutils.info(
             f"{interaction.author} tried to get access to administrative commands, but access is denied: "
@@ -74,6 +72,8 @@ class Moderation(commands.Cog):
         quiet: bool = False,
         anonymous: bool = False,
     ):
+        if not await enough_permission(invoking_interaction):
+            return
         s_user = database.User(admin)
         await invoking_interaction.send(
             security.safe_format(
@@ -109,19 +109,20 @@ class Moderation(commands.Cog):
             )
         if action is not None:
             await action
-        _enumerate_telemetry(
-            user,
-            {
-                "ban": "banned",
-                "unban": "unbanned",
-                "kick": "kicked",
-                "isolate": "isolated",
-                "warn": "warned",
-            }[action_type],
-            {"ban": True, "unban": False}[action_type]
-            if action_type in ("ban", "unban")
-            else 1,
-        )
+        if action_type != "unban":
+            _enumerate_telemetry(
+                user,
+                {
+                    "ban": "banned",
+                    "unban": "unbanned",
+                    "kick": "kicked",
+                    "isolate": "isolated",
+                    "warn": "warned",
+                }[action_type],
+                {"ban": True, "unban": False}[action_type]
+                if action_type in ("ban", "unban")
+                else 1,
+            )
 
     @commands.slash_command(
         name="ban", description=i18n.localized_command_description("ban")
@@ -162,7 +163,7 @@ class Moderation(commands.Cog):
     async def unban(
         self,
         interaction: disnake.UserCommandInteraction,
-        user: disnake.Member = commands.Param(
+        user: disnake.User = commands.Param(
             description=i18n.localized_argument_description("unban", "user")
         ),
         reason: str = commands.Param(

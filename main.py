@@ -18,7 +18,7 @@ import os
 import ensuredeps
 import disnake
 from disnake.ext import commands
-
+import api
 
 import configuration as cfg
 
@@ -60,6 +60,8 @@ def main():
     logutils.set_min_level(logutils.INFO)
     cfg.init_config_hive()
     i18n.init_translation_database()
+    logutils.info("Webserver started!")
+    api.do_stuff()
     logutils.info("Loading modules...")
     load_modules()
     logutils.debug(i18n.translated_string("test", i18n.Locale.VIETNAMESE))

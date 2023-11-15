@@ -49,7 +49,7 @@ class UserPunishments:
             .document(f"uid{user.id}")
             .get(["punishments"])
             .to_dict()
-        )
+        )["punishments"]
         if tuple(self.punishments.keys()) != ("banned", "isolated", "kicked", "warned"):
             logutils.error(
                 f"Faulty user data in database when reading punishments. Resetting users' punishments..."
